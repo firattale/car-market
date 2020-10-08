@@ -2,28 +2,17 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from 'react-router-dom';
 import Home from '../Home';
 import Details from '../Details';
 import Page404 from '../Page404';
+import './App.css';
 
 export const App = () => {
   return (
     <Router>
-      <div>
-        {/* <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/details/48">Details</Link>
-          </li>
-          <li>
-            <Link to="/48">404</Link>
-          </li>
-        </ul> */}
+      <div className="app">
         <Switch>
           <Route path="/details/:id">
             <Details />

@@ -1,0 +1,23 @@
+.page-content {
+    height: calc(100% - 160px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-content h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 24px 0;
+}
+
+.page-content p {
+    font-size: 18px;
+}
+
+
+.page-content p a {
+    color: #EA7F28;
+    text-decoration: none;
+}
