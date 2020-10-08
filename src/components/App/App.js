@@ -13,14 +13,17 @@ export const App = () => {
   return (
     <Router>
       <div>
-        <ul>
+        {/* <ul>
           <li>
             <Link to="/">Home</Link>
           </li>
           <li>
             <Link to="/details/48">Details</Link>
           </li>
-        </ul>
+          <li>
+            <Link to="/48">404</Link>
+          </li>
+        </ul> */}
         <Switch>
           <Route path="/details/:id">
             <Details />
