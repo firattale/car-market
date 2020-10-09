@@ -10,3 +10,19 @@ html,
   width: 100%;
   box-sizing: border-box;
 }
+
+h1 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 12px 0;
+}
+
+a {
+  color: #EA7F28;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #EA7F28;
+  text-decoration: underline;
+}

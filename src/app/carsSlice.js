@@ -5,7 +5,7 @@ export const initialState = {
   colors: [],
   manufacturers: [],
   cars: {
-    data: [],
+    cars: [],
     totalPageCount: null,
     totalCarsCount: null,
     loading: false
@@ -46,5 +46,6 @@ export const carsSlice = createSlice({
 export const selectError = state => state.cars.error;
 export const selectColors = state => state.cars.colors;
 export const selectManufacturers = state => state.cars.manufacturers;
+export const selectCars = state => state.cars.cars;
 
 export default carsSlice.reducer;

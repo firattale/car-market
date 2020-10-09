@@ -1,0 +1,21 @@
+.card-image {
+    height: 80px;
+    width: 100px;
+    margin: 12px;
+}
+
+.card {
+    flex-direction: row;
+    margin-bottom: 8px !important;
+    align-items: flex-start;
+    padding: 8px;
+}
+
+.card-body {
+    padding: 0;
+}
+
+.card-title,
+.card-text {
+    margin: 0;
+}

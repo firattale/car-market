@@ -15,13 +15,3 @@
 .page-content p {
     font-size: 18px;
 }
-
-
-.page-content p a {
-    color: #EA7F28;
-    text-decoration: none;
-}
-
-.page-content p a:hover {
-    text-decoration: underline;
-}

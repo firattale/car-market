@@ -1,0 +1,15 @@
+.home-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-content h1 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 12px 0;
+}
+
+.home-content p {
+    font-size: 18px;
+}
