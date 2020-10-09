@@ -1,7 +1,10 @@
 import React from 'react';
 
 const Home = () => {
-  return <h2>Home</h2>;
+  return <div className="page-content">
+    <p>Home Page</p>
+    {/* <p>You can always go back to the <Link to="/">homepage</Link>.</p> */}
+  </div>;
 };
 
 export default Home;

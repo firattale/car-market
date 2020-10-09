@@ -8,11 +8,14 @@ import Home from '../Home';
 import Details from '../Details';
 import Page404 from '../Page404';
 import './App.css';
+import Header from '../Header';
+import Footer from '../Footer';
 
 export const App = () => {
   return (
     <Router>
       <div className="app">
+        <Header/>
         <Switch>
           <Route path="/details/:id">
             <Details />
@@ -24,6 +27,8 @@ export const App = () => {
             <Page404 />
           </Route>
         </Switch>
+        <Footer/>
+
       </div>
     </Router>
   );
