@@ -10,7 +10,7 @@ export const fetchColors = createAsyncThunk(
 );
 export const fetchManufacturers = createAsyncThunk(
   'cars/fetchManufacturers',
-  async (userId, thunkAPI) => {
+  async () => {
     const response = await api().get('/manufacturers');
     return response.data;
   }

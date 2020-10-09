@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { fetchColors, fetchManufacturers, fetchCars } from '../../app/asyncActions';
 import { useDispatch } from 'react-redux';
+import FilterForm from '../FilterForm';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -12,11 +13,10 @@ const Home = () => {
     dispatch(fetchColors());
     dispatch(fetchManufacturers());
     dispatch(fetchCars());
-  }, []
+  }, [dispatch]
   );
   return <div className="page-content">
-    <p>Home Page</p>
-    {/* <p>You can always go back to the <Link to="/">homepage</Link>.</p> */}
+    <FilterForm></FilterForm>
   </div>;
 };
 

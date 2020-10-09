@@ -16,7 +16,6 @@ import AlertComponent from '../Alert/Alert';
 
 export const App = () => {
   const error = useSelector(selectError);
-  console.log('error', error);
   return (
     <Router>
       <div className="app">

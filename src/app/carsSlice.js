@@ -19,13 +19,13 @@ export const carsSlice = createSlice({
   reducers: {},
   extraReducers: {
     [fetchColors.fulfilled]: (state, action) => {
-      state.colors.push(action.payload);
+      state.colors.push(action.payload.colors);
     },
     [fetchColors.rejected]: (state) => {
       state.error = 'Something went wrong! Please refresh the page.';
     },
     [fetchManufacturers.fulfilled]: (state, action) => {
-      state.manufacturers.push(action.payload);
+      state.manufacturers.push(action.payload.manufacturers);
     },
     [fetchManufacturers.rejected]: (state) => {
       state.error = 'Something went wrong! Please refresh the page.';
@@ -43,8 +43,8 @@ export const carsSlice = createSlice({
   }
 });
 
-// export const { changeFirstCurrency, changeSecondCurrency, changeCurrencyRate } = carsSlice.actions;
-
 export const selectError = state => state.cars.error;
+export const selectColors = state => state.cars.colors;
+export const selectManufacturers = state => state.cars.manufacturers;
 
 export default carsSlice.reducer;

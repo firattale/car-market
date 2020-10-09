@@ -1,5 +1,6 @@
-import Alert from 'react-bootstrap/Alert';
+import { Alert } from 'react-bootstrap';
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const AlertComponent = ({ variant, error }) => {
   const [show, setShow] = useState(true);
@@ -8,7 +9,7 @@ const AlertComponent = ({ variant, error }) => {
   //   }, 3000);
   if (show) {
     return (
-      <Alert transition variant={'danger'} onClose={() => setShow(false)} dismissible className="w-50 mx-auto position-absolute">
+      <Alert transition variant={variant} onClose={() => setShow(false)} dismissible className="w-50 mx-auto position-absolute">
         <p>
           {error}
         </p>
@@ -19,3 +20,8 @@ const AlertComponent = ({ variant, error }) => {
 };
 
 export default AlertComponent;
+
+AlertComponent.propTypes = {
+  variant: PropTypes.string,
+  error: PropTypes.string
+};
