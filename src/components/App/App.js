@@ -28,7 +28,6 @@ export const App = () => {
           </Route>
         </Switch>
         <Footer/>
-
       </div>
     </Router>
   );
