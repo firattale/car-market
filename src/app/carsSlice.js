@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import api from '../api/api';
 
 export const initialState = {
   colors: [],
@@ -10,14 +11,14 @@ export const initialState = {
 export const fetchColors = createAsyncThunk(
   'cars/fetchColors',
   async (userId, thunkAPI) => {
-    const response = await axios.get('https://auto1-mock-server.herokuapp.com/api/colors');
+    const response = await api().get('/colors');
     return response.data;
   }
 );
 export const fetchManufacturers = createAsyncThunk(
   'cars/fetchManufacturers',
   async (userId, thunkAPI) => {
-    const response = await axios.get('https://auto1-mock-server.herokuapp.com/api/manufacturerrs');
+    const response = await api().get('/manufacturers');
     return response.data;
   }
 );

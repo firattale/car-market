@@ -12,6 +12,7 @@ import Header from '../Header';
 import Footer from '../Footer';
 import { useSelector } from 'react-redux';
 import { selectError } from '../../app/carsSlice';
+import AlertComponent from '../Alert/Alert';
 
 export const App = () => {
   const error = useSelector(selectError);
@@ -20,6 +21,7 @@ export const App = () => {
     <Router>
       <div className="app">
         <Header/>
+        {error && <AlertComponent variant="danger" error={error}/>}
         <Switch>
           <Route path="/details/:id">
             <Details />
