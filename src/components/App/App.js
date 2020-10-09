@@ -10,8 +10,12 @@ import Page404 from '../Page404';
 import './App.css';
 import Header from '../Header';
 import Footer from '../Footer';
+import { useSelector } from 'react-redux';
+import { selectError } from '../../app/carsSlice';
 
 export const App = () => {
+  const error = useSelector(selectError);
+  console.log('error', error);
   return (
     <Router>
       <div className="app">
