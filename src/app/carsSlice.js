@@ -1,62 +1,43 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
-import api from '../api/api';
+import { createSlice } from '@reduxjs/toolkit';
+import { fetchColors, fetchManufacturers, fetchCars } from './asyncActions';
 
 export const initialState = {
   colors: [],
   manufacturers: [],
+  cars: {
+    data: [],
+    totalPageCount: null,
+    totalCarsCount: null,
+    loading: false
+  },
   error: null
 };
-
-export const fetchColors = createAsyncThunk(
-  'cars/fetchColors',
-  async (userId, thunkAPI) => {
-    const response = await api().get('/colors');
-    return response.data;
-  }
-);
-export const fetchManufacturers = createAsyncThunk(
-  'cars/fetchManufacturers',
-  async (userId, thunkAPI) => {
-    const response = await api().get('/manufacturers');
-    return response.data;
-  }
-);
 
 export const carsSlice = createSlice({
   name: 'cars',
   initialState,
-  reducers: {
-    // changeFirstCurrency: (state, action) => {
-    //   const { first, firstSign } = action.payload;
-    //   state.firstCurrency = first;
-    //   state.firstSign = firstSign;
-    // },
-    // changeSecondCurrency: (state, action) => {
-    //   const { second, secondSign } = action.payload;
-    //   state.secondCurrency = second;
-    //   state.secondSign = secondSign;
-    // },
-    // changeCurrencyRate: (state, action) => {
-    //   state.currencyRate = action.payload;
-    // }
-  },
+  reducers: {},
   extraReducers: {
-    // Add reducers for additional action types here, and handle loading state as needed
     [fetchColors.fulfilled]: (state, action) => {
-      // Add user to the state array
       state.colors.push(action.payload);
     },
-    [fetchColors.rejected]: (state, action) => {
-      // Add user to the state array
+    [fetchColors.rejected]: (state) => {
       state.error = 'Something went wrong! Please refresh the page.';
     },
     [fetchManufacturers.fulfilled]: (state, action) => {
-      // Add user to the state array
       state.manufacturers.push(action.payload);
     },
-    [fetchManufacturers.rejected]: (state, action) => {
-      // Add user to the state array
+    [fetchManufacturers.rejected]: (state) => {
+      state.error = 'Something went wrong! Please refresh the page.';
+    },
+    [fetchCars.pending]: (state, action) => {
+      state.cars.loading = true;
+    },
+    [fetchCars.fulfilled]: (state, action) => {
+      state.cars = { ...action.payload, loading: false };
+    },
+    [fetchCars.rejected]: (state) => {
+      state.cars.loading = false;
       state.error = 'Something went wrong! Please refresh the page.';
     }
   }

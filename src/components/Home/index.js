@@ -1,13 +1,17 @@
 import React, { useEffect } from 'react';
-import { fetchColors, fetchManufacturers } from '../../app/carsSlice';
+import { fetchColors, fetchManufacturers, fetchCars } from '../../app/asyncActions';
 import { useDispatch } from 'react-redux';
 
 const Home = () => {
   const dispatch = useDispatch();
 
-  useEffect((params) => {
+  useEffect(() => {
+    // const params = {
+    //   manufacturer: 'Skoda'
+    // };
     dispatch(fetchColors());
     dispatch(fetchManufacturers());
+    dispatch(fetchCars());
   }, []
   );
   return <div className="page-content">
