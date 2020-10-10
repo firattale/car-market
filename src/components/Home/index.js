@@ -9,12 +9,12 @@ const Home = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // const params = {
-    //   manufacturer: 'Skoda'
-    // };
+    const params = {
+      page: 1
+    };
     dispatch(fetchColors());
     dispatch(fetchManufacturers());
-    dispatch(fetchCars());
+    dispatch(fetchCars(params));
   }, [dispatch]
   );
   return <div className="home-content">

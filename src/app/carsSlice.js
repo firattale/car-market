@@ -11,6 +11,8 @@ export const initialState = {
     loading: false
   },
   currentPage: 1,
+  manufacturer: null,
+  color: null,
   error: null
 };
 
@@ -61,5 +63,7 @@ export const selectColors = state => state.cars.colors;
 export const selectManufacturers = state => state.cars.manufacturers;
 export const selectCars = state => state.cars.cars;
 export const selectCurrentPage = state => state.cars.currentPage;
+export const selectManufacturer = state => state.cars.manufacturer;
+export const selectColor = state => state.cars.color;
 
 export default carsSlice.reducer;
