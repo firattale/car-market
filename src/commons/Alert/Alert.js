@@ -1,7 +1,7 @@
 import { Alert } from 'react-bootstrap';
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import './Alert.css';
+import './Alert.scss';
 
 const AlertComponent = ({ variant, error }) => {
   const [show, setShow] = useState(true);
