@@ -6,17 +6,28 @@ export const initialState = {
   manufacturers: [],
   cars: {
     cars: [],
-    totalPageCount: null,
-    totalCarsCount: null,
+    totalPageCount: 100,
+    totalCarsCount: 1000,
     loading: false
   },
+  currentPage: 1,
   error: null
 };
 
 export const carsSlice = createSlice({
   name: 'cars',
   initialState,
-  reducers: {},
+  reducers: {
+    incrementPage: (state) => {
+      state.currentPage++;
+    },
+    decrementPage: (state) => {
+      state.currentPage--;
+    },
+    changePage: (state, action) => {
+      state.currentPage = action.payload;
+    }
+  },
   extraReducers: {
     [fetchColors.fulfilled]: (state, action) => {
       state.colors.push(action.payload.colors);
@@ -43,9 +54,12 @@ export const carsSlice = createSlice({
   }
 });
 
+export const { incrementPage, decrementPage, changePage } = carsSlice.actions;
+
 export const selectError = state => state.cars.error;
 export const selectColors = state => state.cars.colors;
 export const selectManufacturers = state => state.cars.manufacturers;
 export const selectCars = state => state.cars.cars;
+export const selectCurrentPage = state => state.cars.currentPage;
 
 export default carsSlice.reducer;
