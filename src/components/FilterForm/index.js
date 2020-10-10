@@ -1,51 +1,47 @@
 import React from 'react';
-import { Formik, Form, Field } from 'formik';
-import { selectColors, selectManufacturers } from '../../app/carsSlice';
-import { useSelector } from 'react-redux';
-import InputLabel from '@material-ui/core/InputLabel';
-import FormControl from '@material-ui/core/FormControl';
+import { Formik } from 'formik';
+import { selectColors, selectManufacturers, changeColor, changeManufacturer } from '../../app/carsSlice';
+import { fetchCars } from '../../app/asyncActions';
+import { useSelector, useDispatch } from 'react-redux';
+import { Form } from 'react-bootstrap';
 import Button from '@material-ui/core/Button';
-import Select from 'react-select';
+import './index.css';
 
 const FilterForm = () => {
-  const [age, setAge] = React.useState('');
-
-  const handleChange = (event) => {
-    setAge(event.value);
-  };
+  const dispatch = useDispatch();
   const colorOptions = useSelector(selectColors);
   const manuOptions = useSelector(selectManufacturers);
   return (
-    <div className="w-25">
+    <div className="form-container">
       <Formik
         initialValues={{
-          formColor: null,
-          formManufacturer: null
+          color: undefined,
+          manufacturer: undefined
         }}
         onSubmit={async (values) => {
-          console.log('values', values);
-        //   await new Promise((r) => setTimeout(r, 500));
-        //   alert(JSON.stringify(values, null, 2));
+          dispatch(changeColor(values.color));
+          dispatch(changeManufacturer(values.manufacturer));
+          const params = { ...values, page: 1 };
+          dispatch(fetchCars(params));
         }}
       >
-        {({ submitForm, isSubmitting, handleSubmit }) => (
-          <Form onSubmit={handleSubmit} className="d-flex flex-column w-25">
-            <FormControl >
-              <InputLabel id="formColor">Colors</InputLabel>
-              <Select options={colorOptions.map(el => ({ value: el, label: el }))} onChange={handleChange}/>
-              {/* <Form.Control as="select" onChange={props.handleChange}>
-              <option value="">All car colors</option>
-              {arr.map(option => <option key={option} value={option}>{option}</option>)}
-            </Form.Control> */}
-            </FormControl>
-            {/* <Form.Group controlId="formManufacturer">
-            <Form.Label>Manufacturer</Form.Label>
-            <Form.Control as="select" onChange={props.handleChange}>
-              <option value="">All manufacturers</option>
-              {manuOptions.map(option => <option key={option} value={option.name}>{option.name}</option>)}
-            </Form.Control>
-          </Form.Group> */}
-            <Button variant="primary" type="submit">Submit</Button>
+        {({ handleSubmit, isSubmitting, handleChange }) => (
+          <Form onSubmit={handleSubmit}>
+            <Form.Group controlId="color" onChange={handleChange}>
+              <Form.Label>Color</Form.Label>
+              <Form.Control as="select">
+                <option value='' >All Car Colors</option>
+                { colorOptions.map(option => <option key={option} value={option}>{option}</option>)}
+              </Form.Control>
+            </Form.Group>
+            <Form.Group controlId="manufacturer" onChange={handleChange}>
+              <Form.Label>Manufacturer</Form.Label>
+              <Form.Control as="select">
+                <option value=''>All Manufacturers</option>
+                {manuOptions.map(option => <option key={option.name} value={option.name}>{option.name}</option>)}
+              </Form.Control>
+            </Form.Group>
+            <Button type="submit" className="form-button" size="small" disabled={isSubmitting}>Filter</Button>
           </Form>
         )}
       </Formik>

@@ -11,8 +11,8 @@ const CarList = () => {
   return (
     <div className="d-flex flex-column w-75 p-4">
       <h1>Available Cars</h1>
-      <p>Showing {totalCarsCount / totalPageCount} of {cars.totalCarsCount} Results</p>
-      {cars.cars.map(car => car && <CarCard key={car.stockNumber} car={car} />)}
+      <p>Showing {cars.cars.length} of {cars.totalCarsCount} Results</p>
+      {cars.cars.map(car => car && <CarCard key={car.mileage.number} car={car} />)}
       <Pagination/>
     </div>
   );

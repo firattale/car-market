@@ -1,0 +1,14 @@
+.form-container {
+    width: 25%;
+    border: 0.5px solid rgb(238, 238, 238);
+    padding: 12px;
+}
+
+.form-button {
+    background-color: #EA7F28 !important;
+    color: white !important;
+    width: 50%;
+}
+.form-button:hover {
+    background-color: #D37324 !important;
+}
