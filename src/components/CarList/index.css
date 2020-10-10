@@ -19,3 +19,8 @@
 .card-text {
     margin: 0;
 }
+
+.page-count {
+    font-size: 12px;
+    margin: 0 8px;
+}
