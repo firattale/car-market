@@ -1,5 +1,5 @@
 import React from 'react';
-import './Page404.css';
+import './Page404.scss';
 import logo from '../../commons/Header/logo.png';
 import { Link } from 'react-router-dom';
 

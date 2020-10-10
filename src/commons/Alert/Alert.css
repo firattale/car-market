@@ -1,0 +1,17 @@
+.alert {
+    position: absolute;
+    width: 46%;
+    margin: auto;
+}
+
+.alert p {
+    font-size: 12px;
+    margin-bottom: 0;
+}
+
+@media (min-width: 375px) and (max-width: 825px) {
+    .alert {
+        width: 60%;
+    }
+    
+}

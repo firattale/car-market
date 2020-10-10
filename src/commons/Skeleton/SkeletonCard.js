@@ -9,7 +9,7 @@ const SkeletonCard = () => {
         <Skeleton width={75} height={90}/>
         <Card.Body className="d-flex flex-column">
           <Skeleton width={95} height={28}/>
-          <Skeleton width={360} height={28}/>
+          <Skeleton width={100} height={28}/>
           <Skeleton width={100} height={28}/>
         </Card.Body>
       </Card>

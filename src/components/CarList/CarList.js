@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectCars } from '../../app/carsSlice';
 import CarCard from '../Card/Card';
-import './CarList.css';
+import './CarList.scss';
 import Pagination from '../Pagination/Pagination';
 import SkeletonCard from '../../commons/Skeleton/SkeletonCard';
 

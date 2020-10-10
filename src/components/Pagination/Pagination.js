@@ -51,7 +51,7 @@ const Pagination = () => {
     !isLastPage && dispatch(fetchCars(params));
   };
   return (
-    <div className="d-flex justify-content-center mt-3">
+    <div className="d-flex justify-content-center">
       <span className={cx({ 'pag-button': !isFirstPage })} onClick={onFirstClickHandler}>First</span>
       <span className={cx({ 'pag-button': !isFirstPage })} onClick={onPreviousClickHandler}>Previous</span>
       <span className="page-count">Page {currentPage} of {totalPageCount}</span>

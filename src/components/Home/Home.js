@@ -4,7 +4,7 @@ import { selectColors, selectManufacturers, selectCars } from '../../app/carsSli
 import { useDispatch, useSelector } from 'react-redux';
 import FilterForm from '../FilterForm/FilterForm';
 import CarList from '../CarList/CarList';
-import './Home.css';
+import './Home.scss';
 
 const Home = () => {
   const dispatch = useDispatch();

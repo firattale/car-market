@@ -7,7 +7,7 @@ import {
 import Home from '../Home/Home';
 import Details from '../Details/Details';
 import Page404 from '../Page404/Page404';
-import './App.css';
+import './App.scss';
 import Header from '../../commons/Header/Header';
 import Footer from '../../commons/Footer/Footer';
 import { useSelector } from 'react-redux';
@@ -20,7 +20,7 @@ export const App = () => {
     <Router>
       <div className="app">
         <Header/>
-        {error && <AlertComponent variant="danger" error={error}/>}
+        {error && <div className="d-flex justify-content-center"><AlertComponent variant="danger" error={error}/></div>}
         <Switch>
           <Route path="/details/:id">
             <Details />

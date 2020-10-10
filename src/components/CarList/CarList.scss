@@ -1,0 +1,54 @@
+.list-container {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin-left: 12px;
+}
+
+
+.card-group {
+    margin-bottom: 8px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.card {
+    flex-direction: row;
+    margin-bottom: 8px;
+    align-items: flex-start;
+    padding: 12px;
+    border: 0.5px solid rgb(238, 238, 238);
+}
+
+.card-body {
+    padding: 0;
+}
+
+.card-image {
+    height: 80px;
+    width: 100px;
+    margin: 12px;
+}
+
+.card-title,
+.card-text {
+    margin: 0;
+}
+
+.page-count,
+span {
+    font-size: 12px;
+    margin: 0 8px;
+}
+
+
+@media (min-width: 375px) and (max-width: 825px) {
+    .list-container {
+        width: 100%;
+        padding: 0;
+        margin-top: 24px;
+        margin-left: 0;
+    }
+}

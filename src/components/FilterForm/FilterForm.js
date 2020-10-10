@@ -5,7 +5,7 @@ import { fetchCars } from '../../app/asyncActions';
 import { useSelector, useDispatch } from 'react-redux';
 import { Form } from 'react-bootstrap';
 import Button from '@material-ui/core/Button';
-import './FilterForm.css';
+import './FilterForm.scss';
 import { capitalize } from '../../helpers/helpers';
 
 const FilterForm = () => {

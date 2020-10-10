@@ -4,14 +4,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
 
-.page-content h1 {
-    font-size: 32px;
-    font-weight: bold;
-    margin: 24px 0;
-}
+    & h1 {
+        font-size: 32px;
+        font-weight: bold;
+        margin: 24px 0;
+    }
 
-.page-content p {
-    font-size: 18px;
+    & p {
+        font-size: 18px;
+    }
 }
