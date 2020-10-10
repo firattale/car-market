@@ -7,7 +7,6 @@ import Pagination from '../Pagination/Pagination';
 
 const CarList = () => {
   const cars = useSelector(selectCars);
-  const { totalCarsCount, totalPageCount } = cars;
   return (
     <div className="d-flex flex-column w-75 p-4">
       <h1>Available Cars</h1>

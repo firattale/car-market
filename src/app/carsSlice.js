@@ -2,13 +2,20 @@ import { createSlice } from '@reduxjs/toolkit';
 import { fetchColors, fetchManufacturers, fetchCars } from './asyncActions';
 
 export const initialState = {
-  colors: [],
-  manufacturers: [],
+  colors: {
+    data: [],
+    isLoaded: false
+  },
+  manufacturers: {
+    data: [],
+    isLoaded: false
+  },
   cars: {
     cars: [],
     totalPageCount: 100,
     totalCarsCount: 1000,
-    loading: false
+    loading: false,
+    isLoaded: false
   },
   currentPage: 1,
   manufacturer: null,
@@ -38,22 +45,26 @@ export const carsSlice = createSlice({
   },
   extraReducers: {
     [fetchColors.fulfilled]: (state, action) => {
-      state.colors = action.payload.colors;
+      state.colors.data = action.payload.colors;
+      state.colors.isLoaded = true;
     },
     [fetchColors.rejected]: (state) => {
       state.error = 'Something went wrong! Please refresh the page.';
+      state.colors.isLoaded = true;
     },
     [fetchManufacturers.fulfilled]: (state, action) => {
-      state.manufacturers = action.payload.manufacturers;
+      state.manufacturers.data = action.payload.manufacturers;
+      state.manufacturers.isLoaded = true;
     },
     [fetchManufacturers.rejected]: (state) => {
       state.error = 'Something went wrong! Please refresh the page.';
+      state.manufacturers.isLoaded = false;
     },
     [fetchCars.pending]: (state, action) => {
       state.cars.loading = true;
     },
     [fetchCars.fulfilled]: (state, action) => {
-      state.cars = { ...action.payload, loading: false };
+      state.cars = { ...action.payload, loading: false, isLoaded: true };
     },
     [fetchCars.rejected]: (state) => {
       state.cars.loading = false;
