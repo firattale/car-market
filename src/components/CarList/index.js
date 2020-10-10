@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { selectCars, selectCurrentPage, incrementPage, decrementPage, changePage } from '../../app/carsSlice';
 import CarCard from '../Card/Card';
 import './index.css';
+import cx from 'classnames';
 
 const CarList = () => {
   const cars = useSelector(selectCars);
@@ -16,11 +17,11 @@ const CarList = () => {
       <p>Showing {totalCarsCount / totalPageCount} of {cars.totalCarsCount} Results</p>
       {cars.cars.map(car => car && <CarCard key={car.stockNumber} car={car} />)}
       <div className="d-flex justify-content-center mt-3">
-        <span className="pag-button" onClick={() => dispatch(changePage(1))}>First</span>
-        <span className="pag-button" onClick={() => { currentPage !== 1 && dispatch(decrementPage()); }}>Previous</span>
+        <span className={cx({ 'pag-button': currentPage !== 1 })}onClick={() => { currentPage !== 1 && dispatch(changePage(1)); }}>First</span>
+        <span className={cx({ 'pag-button': currentPage !== 1 })} onClick={() => { currentPage !== 1 && dispatch(decrementPage()); }}>Previous</span>
         <span className="page-count">Page {currentPage} of {totalPageCount}</span>
-        <span className="pag-button" onClick={() => { currentPage !== totalPageCount && dispatch(incrementPage()); }}>Next</span>
-        <span className="pag-button" onClick={() => dispatch(changePage(totalPageCount))}>Last</span>
+        <span className={cx({ 'pag-button': currentPage !== totalPageCount })} onClick={() => { currentPage !== totalPageCount && dispatch(incrementPage()); }}>Next</span>
+        <span className={cx({ 'pag-button': currentPage !== totalPageCount })} onClick={() => { currentPage !== totalPageCount && dispatch(changePage(totalPageCount)); }}>Last</span>
       </div>
     </div>
   );

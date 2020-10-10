@@ -20,7 +20,8 @@
     margin: 0;
 }
 
-.page-count {
+.page-count,
+span {
     font-size: 12px;
     margin: 0 8px;
 }
