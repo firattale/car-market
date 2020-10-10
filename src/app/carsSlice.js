@@ -11,7 +11,7 @@ export const initialState = {
     isLoaded: false
   },
   cars: {
-    cars: [],
+    data: [],
     totalPageCount: 100,
     totalCarsCount: 1000,
     loading: false,
@@ -60,14 +60,22 @@ export const carsSlice = createSlice({
       state.error = 'Something went wrong! Please refresh the page.';
       state.manufacturers.isLoaded = false;
     },
-    [fetchCars.pending]: (state, action) => {
+    [fetchCars.pending]: (state) => {
       state.cars.loading = true;
     },
     [fetchCars.fulfilled]: (state, action) => {
-      state.cars = { ...action.payload, loading: false, isLoaded: true };
+      console.log('object', action.payload);
+
+      state.cars.data = action.payload.cars;
+      state.cars.totalCarsCount = action.payload.totalCarsCount;
+      state.cars.totalPageCount = action.payload.totalPageCount;
+      state.cars.loading = false;
+      state.cars.isLoaded = true;
     },
     [fetchCars.rejected]: (state) => {
+      state.cars.data = [];
       state.cars.loading = false;
+      state.cars.isLoaded = false;
       state.error = 'Something went wrong! Please refresh the page.';
     }
   }
