@@ -4,15 +4,15 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
-import Home from '../Home';
-import Details from '../Details';
-import Page404 from '../Page404';
+import Home from '../Home/Home';
+import Details from '../Details/Details';
+import Page404 from '../Page404/Page404';
 import './App.css';
-import Header from '../Header';
-import Footer from '../Footer';
+import Header from '../../commons/Header/Header';
+import Footer from '../../commons/Footer/Footer';
 import { useSelector } from 'react-redux';
 import { selectError } from '../../app/carsSlice';
-import AlertComponent from '../Alert/Alert';
+import AlertComponent from '../../commons/Alert/Alert';
 
 export const App = () => {
   const error = useSelector(selectError);

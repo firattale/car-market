@@ -25,3 +25,15 @@ span {
     font-size: 12px;
     margin: 0 8px;
 }
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    padding: 24px;
+}
+@media (min-width: 375px) and (max-width: 825px) {
+    .list-container {
+        width: 100%;
+    }
+}

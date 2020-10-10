@@ -1,6 +1,6 @@
 import React from 'react';
-import './index.css';
-import logo from '../Header/logo.png';
+import './Page404.css';
+import logo from '../../commons/Header/logo.png';
 import { Link } from 'react-router-dom';
 
 const Page404 = () => (

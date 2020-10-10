@@ -5,6 +5,12 @@
     padding: 12px;
 }
 
+@media (min-width: 375px) and (max-width: 825px) {
+    .home-content {
+        flex-direction: column;
+    }
+}
+
 .home-content h1 {
     font-size: 24px;
     font-weight: bold;

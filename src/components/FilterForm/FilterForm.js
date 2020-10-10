@@ -5,9 +5,9 @@ import { fetchCars } from '../../app/asyncActions';
 import { useSelector, useDispatch } from 'react-redux';
 import { Form } from 'react-bootstrap';
 import Button from '@material-ui/core/Button';
-import { Persist } from 'formik-persist';
-import './index.css';
+import './FilterForm.css';
 import { capitalize } from '../../helpers/helpers';
+
 const FilterForm = () => {
   const dispatch = useDispatch();
   const colorOptions = useSelector(selectColors);
@@ -25,7 +25,7 @@ const FilterForm = () => {
           dispatch(fetchCars({ ...values, page: 1 }));
         }}
       >
-        {({ handleSubmit, isSubmitting, handleChange }) => (
+        {({ handleSubmit, handleChange }) => (
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="color" onChange={handleChange}>
               <Form.Label>Color</Form.Label>
@@ -41,8 +41,7 @@ const FilterForm = () => {
                 {manuOptions.data.map(option => <option key={option.name} value={option.name}>{option.name}</option>)}
               </Form.Control>
             </Form.Group>
-            <Button type="submit" className="form-button" size="small">Filter</Button>
-            <Persist name="filter-form" />
+            <div className="d-flex justify-content-end"><Button type="submit" className="form-button" size="small">Filter</Button></div>
           </Form>
         )}
       </Formik>
