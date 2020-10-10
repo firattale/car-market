@@ -64,8 +64,6 @@ export const carsSlice = createSlice({
       state.cars.loading = true;
     },
     [fetchCars.fulfilled]: (state, action) => {
-      console.log('object', action.payload);
-
       state.cars.data = action.payload.cars;
       state.cars.totalCarsCount = action.payload.totalCarsCount;
       state.cars.totalPageCount = action.payload.totalPageCount;

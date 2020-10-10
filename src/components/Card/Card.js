@@ -2,17 +2,12 @@ import React from 'react';
 import { Card, CardGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { selectCars } from '../../app/carsSlice';
-import { useSelector } from 'react-redux';
-import Skeleton from 'react-loading-skeleton';
 
 const CarCard = ({ car: { stockNumber, pictureUrl, modelName, fuelType, mileage: { number }, color } }) => {
-  // const cars = useSelector(selectCars);
-  // console.log('loading', cars.loading);
   return (
     <CardGroup>
       <Card>
-        { <img src={pictureUrl} className="card-image" alt="Car Logo"></img> || <Skeleton />}
+        <img src={pictureUrl} className="card-image" alt="Car Logo"></img>
         <Card.Body>
           <Card.Title><h1>{modelName}</h1></Card.Title>
           <Card.Text>Stock - # {stockNumber} - {number} KM - {fuelType} - {color}</Card.Text>
