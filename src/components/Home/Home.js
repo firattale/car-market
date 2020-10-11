@@ -19,7 +19,7 @@ const Home = () => {
     !colors.isLoaded && dispatch(fetchColors());
     !manufacturers.isLoaded && dispatch(fetchManufacturers());
     !cars.isLoaded && dispatch(fetchCars(params));
-  }
+  }, []
   );
   return <div className="home-content">
     <FilterForm/>

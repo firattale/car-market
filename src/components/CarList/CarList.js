@@ -12,7 +12,7 @@ const CarList = () => {
     <div className="list-container">
       <h1>Available Cars</h1>
       <p>Showing {cars.data.length || 10} of {cars.totalCarsCount} Results</p>
-      {cars.data.length > 0 ? cars.data.map(car => <CarCard key={car.mileage.number} car={car} />) : <SkeletonCard/> }
+      <div>{cars.data.length > 0 ? cars.data.map(car => <CarCard key={car.mileage.number} car={car} />) : <SkeletonCard/> }</div>
       <Pagination/>
     </div>
   );
