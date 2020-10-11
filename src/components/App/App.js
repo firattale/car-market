@@ -4,9 +4,9 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
-import Home from '../Home/Home';
-import Details from '../Details/Details';
-import Page404 from '../Page404/Page404';
+import Home from '../../routes/Home/Home';
+import Details from '../../routes/Details/Details';
+import Page404 from '../../routes/Page404/Page404';
 import './App.scss';
 import Header from '../../commons/Header/Header';
 import Footer from '../../commons/Footer/Footer';
