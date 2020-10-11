@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchColors, fetchManufacturers, fetchCars } from './asyncActions';
+import { fetchColors, fetchManufacturers, fetchCars, fetchCarDetail } from './asyncActions';
 
 export const initialState = {
   colors: {
@@ -16,6 +16,9 @@ export const initialState = {
     totalCarsCount: 1000,
     loading: false,
     isLoaded: false
+  },
+  carDetail: {
+    data: {}
   },
   currentPage: 1,
   manufacturer: null,
@@ -74,6 +77,13 @@ export const carsSlice = createSlice({
       state.cars.data = [];
       state.cars.loading = false;
       state.cars.isLoaded = false;
+      state.error = 'Something went wrong! Please refresh the page.';
+    },
+    [fetchCarDetail.fulfilled]: (state, action) => {
+      state.carDetail.data = action.payload.car;
+    },
+    [fetchCarDetail.rejected]: (state) => {
+      state.carDetail.data = {};
       state.error = 'Something went wrong! Please refresh the page.';
     }
   }

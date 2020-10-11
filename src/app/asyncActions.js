@@ -24,3 +24,11 @@ export const fetchCars = createAsyncThunk(
     return response.data;
   }
 );
+
+export const fetchCarDetail = createAsyncThunk(
+  'cars/fetchCarDetail',
+  async (stockNumber) => {
+    const response = await api().get(`/cars/${stockNumber}`);
+    return response.data;
+  }
+);
