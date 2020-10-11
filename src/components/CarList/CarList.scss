@@ -8,14 +8,15 @@
 .card-group {
     margin-bottom: 8px;
 
-    &:last-child {
+    &:last-child,
+    &>.card {
         margin-bottom: 0;
     }
 }
 
+
 .card {
     flex-direction: row;
-    margin-bottom: 8px;
     align-items: flex-start;
     padding: 12px;
     border: 1px solid rgb(238, 238, 238);
@@ -50,5 +51,14 @@ span {
         padding: 0;
         margin-top: 24px;
         margin-left: 0;
+    }
+
+    .card {
+
+        &-title,
+        &-text {
+            font-size: 12px !important;
+        }
+
     }
 }

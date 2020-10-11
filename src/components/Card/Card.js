@@ -6,8 +6,8 @@ import PropTypes from 'prop-types';
 const CarCard = ({ car: { stockNumber, pictureUrl, modelName, fuelType, mileage: { number }, color } }) => {
   return (
     <CardGroup>
-      <Card>
-        <img src={pictureUrl} className="card-image" alt="Car Logo"></img>
+      <Card className="d-flex align-items-center">
+        <div><img src={pictureUrl} className="card-image" alt="Car Logo"></img></div>
         <Card.Body>
           <Card.Title><h1>{modelName}</h1></Card.Title>
           <Card.Text>Stock - # {stockNumber} - {number} KM - {fuelType} - {color}</Card.Text>
