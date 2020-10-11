@@ -9,8 +9,24 @@
     display: flex;
     margin: 24px 48px 0 48px;
 
-    & .card-group:first-child .card{
+    & .card-group:first-child .card {
         border: 0;
+    }
+
+    & h1 {
+        font-size: 32px;
+        margin-top: 0;
+    }
+
+    & p {
+        font-size: 18px;
+        margin-bottom: 12px;
+
+    }
+
+    & .detail-text {
+        font-size: 12px;
+
     }
 }
 

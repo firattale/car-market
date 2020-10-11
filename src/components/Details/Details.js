@@ -41,11 +41,11 @@ const Details = () => {
         <CardGroup>
           <Card className="d-flex align-items-center">
             <Card.Body>
-              <Card.Title><h1>{ details.modelName || <Skeleton className="m-0" width={50} />}</h1></Card.Title>
+              <Card.Title><h1>{ details.modelName || <Skeleton className="m-0" width={100} />}</h1></Card.Title>
               <Card.Text>Stock #{" "}
-                {details.stockNumber ? `${details.stockNumber} - ${details?.mileage?.number} KM - ${details.fuelType} - ${capitalize(details.color)}` : <Skeleton className="m-0" width={250} />}
+                {details.stockNumber ? `${details.stockNumber} - ${details?.mileage?.number} KM - ${details.fuelType} - ${capitalize(details.color)}` : <Skeleton className="m-0" width={150} />}
               </Card.Text>
-              <Card.Text>This car is currently available and can be delivered as soon as tomorrow morning. Please be aware that delivery times shown in this page are not definitive and may change due to bad weather conditions.</Card.Text>
+              <Card.Text className="detail-text">This car is currently available and can be delivered as soon as tomorrow morning. Please be aware that delivery times shown in this page are not definitive and may change due to bad weather conditions.</Card.Text>
             </Card.Body>
           </Card>
         </CardGroup>
