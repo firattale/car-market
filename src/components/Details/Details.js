@@ -1,19 +1,57 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchCarDetail } from '../../app/asyncActions';
+import { selectCarDetail, clearCarDetail } from '../../app/carsSlice';
+import './details.scss';
+import Skeleton from 'react-loading-skeleton';
+import { Card, CardGroup } from 'react-bootstrap';
+import Button from '@material-ui/core/Button';
 
 const Details = () => {
-  const { id } = useParams();
-  const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(fetchCarDetail(id));
+    return () => {
+      dispatch(clearCarDetail());
+    };
   }, []
   );
+  const details = useSelector(selectCarDetail);
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  const [fav, setFav] = useState(localStorage.getItem(id));
+
+  const onSaveHandler = () => {
+    if (fav) {
+      setFav(false);
+      localStorage.removeItem(id);
+    } else {
+      setFav(true);
+      localStorage.setItem(id, true);
+    }
+  };
   return (
-    <div className="page-content">
-      <h3>Requested  ID: {id}</h3>
+    <div className="details-page-content">
+      { details.pictureUrl ? <div className="w-100 text-center"><img src={details.pictureUrl} alt="Car Logo"></img></div> : <Skeleton width={500} height={260} className="m-0" />}
+      <div className="content-container">
+        <CardGroup>
+          <Card className="d-flex align-items-center">
+            <Card.Body>
+              <Card.Title><h1>{details.modelName}</h1></Card.Title>
+              <Card.Text>Stock - # {details.stockNumber} - {details.number} KM - {details.fuelType} - {details.color}</Card.Text>
+              <Card.Text>This car is currently available and can be delivered as soon as tomorrow morning. Please be aware that delivery times shown in this page are not definitive and may change due to bad weather conditions.</Card.Text>
+            </Card.Body>
+          </Card>
+        </CardGroup>
+        <CardGroup>
+          <Card className="d-flex align-items-center">
+            <Card.Body>
+              <Card.Text>If you like this car, click the button and save it in your collection of favourite items.</Card.Text>
+              <div className="d-flex justify-content-end"><Button type="submit" className="form-button mt-2" size="small" onClick={onSaveHandler}>{localStorage.getItem(details.stockNumber) ? 'UnSave' : 'Save'}</Button></div>
+            </Card.Body>
+          </Card>
+        </CardGroup>
+      </div>
     </div>
   );
 };

@@ -17,9 +17,7 @@ export const initialState = {
     loading: false,
     isLoaded: false
   },
-  carDetail: {
-    data: {}
-  },
+  carDetail: {},
   currentPage: 1,
   manufacturer: null,
   color: null,
@@ -44,6 +42,9 @@ export const carsSlice = createSlice({
     },
     changeManufacturer: (state, action) => {
       state.manufacturer = action.payload;
+    },
+    clearCarDetail: (state, action) => {
+      state.carDetail = {};
     }
   },
   extraReducers: {
@@ -80,7 +81,7 @@ export const carsSlice = createSlice({
       state.error = 'Something went wrong! Please refresh the page.';
     },
     [fetchCarDetail.fulfilled]: (state, action) => {
-      state.carDetail.data = action.payload.car;
+      state.carDetail = action.payload.car;
     },
     [fetchCarDetail.rejected]: (state) => {
       state.carDetail.data = {};
@@ -89,7 +90,7 @@ export const carsSlice = createSlice({
   }
 });
 
-export const { incrementPage, decrementPage, changePage, changeColor, changeManufacturer } = carsSlice.actions;
+export const { incrementPage, decrementPage, changePage, changeColor, changeManufacturer, clearCarDetail } = carsSlice.actions;
 
 export const selectError = state => state.cars.error;
 export const selectColors = state => state.cars.colors;
@@ -97,6 +98,7 @@ export const selectManufacturers = state => state.cars.manufacturers;
 export const selectCars = state => state.cars.cars;
 export const selectCurrentPage = state => state.cars.currentPage;
 export const selectManufacturer = state => state.cars.manufacturer;
+export const selectCarDetail = state => state.cars.carDetail;
 export const selectColor = state => state.cars.color;
 
 export default carsSlice.reducer;
