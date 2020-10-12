@@ -49,8 +49,6 @@
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
-<img src="public/ss.png" alt="Logo" width="380" height="80">
-
 * This project is a small mock-up for second hand auto market.
 * When you start the project, it fetches all the cars and show it on the homepage.
 * You can scroll down and see other pages by using pagination buttons.
@@ -134,4 +132,4 @@ Project Link: [https://firattale.github.io/auto1/](https://github.com/firattale/
 [license-url]: https://github.com/firattale/auto1/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/firat-tale
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: public/ss.png
