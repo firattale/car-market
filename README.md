@@ -11,20 +11,17 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/firattale/auto1">
-    <img src="src/commons/Header/logo.png" alt="Logo" width="380" height="80">
-  </a>
 
   <h3 align="center">Second Hand Auto Market</h3>
 
   <p align="center">
     <br />
     <br />
-    <a href="https://firattale.github.io/auto1/">View Demo</a>
+    <a href="https://firattale.github.io/car-market/">View Demo</a>
     ·
-    <a href="https://github.com/firattale/auto1/issues">Report Bug</a>
+    <a href="https://github.com/firattale/car-market/issues">Report Bug</a>
     ·
-    <a href="https://github.com/firattale/auto1/issues">Request Feature</a>
+    <a href="https://github.com/firattale/car-market/issues">Request Feature</a>
   </p>
 </p>
 
@@ -75,7 +72,7 @@ npm install npm@latest -g
 
 1. Clone the repo
 ```sh
-git clone https://github.com/firattale/auto1.git
+git clone https://github.com/firattale/car-market.git
 cd auto
 ```
 2. Install NPM packages
@@ -108,7 +105,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Your Name - [@firattale](https://twitter.com/firattale) - firattale@hotmail.com
 
-Project Link: [https://firattale.github.io/auto1/](https://github.com/firattale/auto1)
+Project Link: [https://firattale.github.io/car-market/](https://github.com/firattale/car-market)
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
@@ -120,16 +117,16 @@ Project Link: [https://firattale.github.io/auto1/](https://github.com/firattale/
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/firattale/auto1.svg?style=flat-square
-[contributors-url]: https://github.com/firattale/auto1/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/firattale/auto1.svg?style=flat-square
-[forks-url]: https://github.com/firattale/auto1/network/members
-[stars-shield]: https://img.shields.io/github/stars/firattale/auto1.svg?style=flat-square
-[stars-url]: https://github.com/firattale/auto1/stargazers
-[issues-shield]: https://img.shields.io/github/issues/firattale/auto1.svg?style=flat-square
-[issues-url]: https://github.com/firattale/auto1/issues
-[license-shield]: https://img.shields.io/github/license/firattale/auto1.svg?style=flat-square
-[license-url]: https://github.com/firattale/auto1/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/firattale/car-market.svg?style=flat-square
+[contributors-url]: https://github.com/firattale/car-market/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/firattale/car-market.svg?style=flat-square
+[forks-url]: https://github.com/firattale/car-market/network/members
+[stars-shield]: https://img.shields.io/github/stars/firattale/car-market.svg?style=flat-square
+[stars-url]: https://github.com/firattale/car-market/stargazers
+[issues-shield]: https://img.shields.io/github/issues/firattale/car-market.svg?style=flat-square
+[issues-url]: https://github.com/firattale/car-market/issues
+[license-shield]: https://img.shields.io/github/license/firattale/car-market.svg?style=flat-square
+[license-url]: https://github.com/firattale/car-market/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/firat-tale
 [product-screenshot]: public/ss.png
