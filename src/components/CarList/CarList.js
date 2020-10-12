@@ -8,7 +8,6 @@ import { selectCars } from '../../app/selectors';
 
 const CarList = () => {
   const cars = useSelector(selectCars);
-  console.log('cars', cars);
   return (
     <div className="list-container">
       <h1>Available Cars</h1>

@@ -1,24 +1,23 @@
-import { configureStore } from '@reduxjs/toolkit';
-import { ConnectedRouter } from 'connected-react-router';
 import React from 'react';
+import { render } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
+
 import { Provider } from 'react-redux';
-import reducer from '../app/carsSlice';
-import { createMemoryHistory } from 'history';
-import { BrowserRouter as Router } from 'react-router-dom';
+import store from '../app/store';
 
-export const makeStore = () => {
-  return configureStore({ reducer });
-};
-const history = createMemoryHistory();
-
-const wrapComponent = (Component, store, props = {}) => {
+const Wrapper = ({ children }) => {
   return (
-    <Provider store={store || makeStore()}>
-      <Router history={history}>
-        <Component {...props} />
-      </Router>
+    <Provider store={store}>
+      <MemoryRouter>{children}</MemoryRouter>
     </Provider>
   );
 };
 
-export default wrapComponent;
+const customRender = (ui, options) =>
+  render(ui, { wrapper: Wrapper, ...options });
+
+// re-export everything
+export * from '@testing-library/react';
+
+// override render method
+export { customRender as render };

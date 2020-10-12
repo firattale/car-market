@@ -1,10 +1,10 @@
 import React from 'react';
-import Home from './Home';
+import Carlist from './Carlist';
 import { screen } from '@testing-library/react';
 import { render } from '../../helpers/test-utils';
 
-describe('App', () => {
+describe('Carlist', () => {
   test('renders the Home Page', async () => {
-    render(<Home/>);
+    render(<Carlist/>);
   });
 });
