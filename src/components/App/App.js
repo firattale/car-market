@@ -20,7 +20,7 @@ export const App = () => {
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <div className="app">
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div></div>}>
           <Header />
           {error && <div className="d-flex justify-content-center"><AlertComponent variant="danger" error={error} /></div>}
           <Switch>
