@@ -49,6 +49,7 @@
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
+<img src="public/ss.png" alt="Logo" width="380" height="80">
 
 * This project is a small mock-up for second hand auto market.
 * When you start the project, it fetches all the cars and show it on the homepage.
