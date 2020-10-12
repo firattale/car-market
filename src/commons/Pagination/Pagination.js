@@ -1,8 +1,9 @@
 import React from 'react';
 import cx from 'classnames';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectCars, selectCurrentPage, incrementPage, decrementPage, changePage, selectManufacturer, selectColor, selectSorting } from '../../app/carsSlice';
+import { incrementPage, decrementPage, changePage } from '../../app/carsSlice';
 import { fetchCars } from '../../app/asyncActions';
+import { selectCars, selectCurrentPage, selectManufacturer, selectColor, selectSorting } from '../../app/selectors';
 
 const Pagination = () => {
   const cars = useSelector(selectCars);

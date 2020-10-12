@@ -1,5 +1,5 @@
-import reducer, { initialState, incrementPage, selectCurrentPage, decrementPage, changePage, changeColor, selectColor, changeManufacturer, selectManufacturer, clearCarDetail, selectSorting, changeSorting, selectCarDetail, selectCars, selectError, selectColors, selectManufacturers } from './carsSlice';
-
+import reducer, { initialState, incrementPage, decrementPage, changePage, changeColor, changeManufacturer, clearCarDetail, changeSorting } from './carsSlice';
+import { selectCarDetail, selectCars, selectError, selectCurrentPage, selectColors, selectManufacturers, selectSorting, selectManufacturer, selectColor } from './selectors';
 describe('carsSlice', () => {
   describe('reducer, actions and selectors', () => {
     it('should return the initial state on first run', () => {

@@ -1,0 +1,9 @@
+export const selectError = state => state.cars.error;
+export const selectColors = state => state.cars.colors;
+export const selectManufacturers = state => state.cars.manufacturers;
+export const selectCars = state => state.cars.cars;
+export const selectCurrentPage = state => state.cars.currentPage;
+export const selectManufacturer = state => state.cars.manufacturer;
+export const selectCarDetail = state => state.cars.carDetail;
+export const selectColor = state => state.cars.color;
+export const selectSorting = state => state.cars.sorting;

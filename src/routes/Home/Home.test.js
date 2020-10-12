@@ -1,30 +1,48 @@
-// import React from 'react';
-// import axios from 'axios';
-// import reducer, { initialState } from '../../app/carsSlice';
-// import Home from './Home';
-// import { createStore } from 'redux';
-// import { useSelector, Provider } from 'react-redux';
+import React from 'react';
+import Home from './Home';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+import configureMockStore from 'redux-mock-store';
+import { render, screen } from '@testing-library/react';
+import { initialState } from '../../app/carsSlice';
+const mockStore = configureMockStore([thunk]);
 
-// import { render, screen } from '@testing-library/react';
-// import wrapComponent from '../../helpers/test-utils';
+const mockState = {
+  ...initialState,
+  ...{
+    cars: {
+      data: {
+        stockNumber: 10020,
+        manufacturerName: 'Skoda',
+        modelName: 'Karoq',
+        color: 'white',
+        mileage: {
+          number: 174045,
+          unit: 'km'
+        },
+        fuelType: 'Diesel',
+        pictureUrl: 'https://auto1-js-task-api--mufasa71.repl.co/images/car.svg'
+      },
+      totalPageCount: 100,
+      totalCarsCount: 1000,
+      loading: false,
+      isLoaded: true
+    }
+  }
+};
+describe('App', () => {
+  const store = mockStore(mockState);
+  const getWrapper = () => render(
+    <Provider store={store}>
+      <Home />
+    </Provider>
+  );
 
-// describe('App', () => {
-//   const mockStore = createStore(reducer, initialState);
-//   mockStore.dispatch = jest.fn();
-//   const getWrapper = () => render(
-//     <Provider store={mockStore}>
-//       <Home />
-//     </Provider>
-//   );
-it('should ', () => {
-  expect(true).toBe(true);
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+  test('fetches colors from an API and displays them', async () => {
+    getWrapper();
+    screen.debug();
+  });
 });
-
-//   afterEach(() => {
-//     jest.clearAllMocks();
-//   });
-//   test('fetches colors from an API and displays them', async () => {
-//     getWrapper();
-//     screen.debug();
-//   });
-// });

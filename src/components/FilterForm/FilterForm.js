@@ -1,12 +1,13 @@
 import React from 'react';
 import { Formik } from 'formik';
-import { selectColors, selectManufacturers, changeColor, changeManufacturer, changeSorting, changePage, selectSorting, selectColor, selectManufacturer } from '../../app/carsSlice';
+import { changeColor, changeManufacturer, changeSorting, changePage } from '../../app/carsSlice';
 import { fetchCars } from '../../app/asyncActions';
 import { useSelector, useDispatch } from 'react-redux';
 import { Form } from 'react-bootstrap';
 import Button from '@material-ui/core/Button';
 import './FilterForm.scss';
 import { capitalize } from '../../helpers/helpers';
+import { selectColors, selectManufacturers, selectSorting, selectColor, selectManufacturer } from '../../app/selectors';
 
 const FilterForm = () => {
   const dispatch = useDispatch();

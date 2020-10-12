@@ -1,13 +1,14 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { selectCars } from '../../app/carsSlice';
 import CarCard from '../Card/Card';
 import './CarList.scss';
 import Pagination from '../../commons/Pagination/Pagination';
 import SkeletonCard from '../../commons/Skeleton/SkeletonCard';
+import { selectCars } from '../../app/selectors';
 
 const CarList = () => {
   const cars = useSelector(selectCars);
+  console.log('cars', cars);
   return (
     <div className="list-container">
       <h1>Available Cars</h1>

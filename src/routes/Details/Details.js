@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCarDetail } from '../../app/asyncActions';
-import { selectCarDetail, clearCarDetail } from '../../app/carsSlice';
+import {  clearCarDetail } from '../../app/carsSlice';
 import './details.scss';
 import Skeleton from 'react-loading-skeleton';
 import { Card, CardGroup } from 'react-bootstrap';
 import Button from '@material-ui/core/Button';
 import { capitalize } from '../../helpers/helpers';
+import {selectCarDetail} from "../../app/selectors"
 
 const Details = () => {
   useEffect(() => {

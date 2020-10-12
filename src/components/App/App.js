@@ -8,8 +8,8 @@ import './App.scss';
 import Header from '../../commons/Header/Header';
 import Footer from '../../commons/Footer/Footer';
 import { useSelector } from 'react-redux';
-import { selectError } from '../../app/carsSlice';
 import AlertComponent from '../../commons/Alert/Alert';
+import { selectError } from '../../app/selectors';
 
 const Details = lazy(() => import('../../routes/Details/Details'));
 const Home = lazy(() => import('../../routes/Home/Home'));
