@@ -20,7 +20,7 @@
   <p align="center">
     <br />
     <br />
-    <a href="https://github.com/firattale/auto1">View Demo</a>
+    <a href="https://firattale.github.io/auto1/">View Demo</a>
     ·
     <a href="https://github.com/firattale/auto1/issues">Report Bug</a>
     ·
@@ -109,7 +109,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Your Name - [@firattale](https://twitter.com/firattale) - firattale@hotmail.com
 
-Project Link: [https://github.com/firattale/auto1](https://github.com/firattale/auto1)
+Project Link: [https://firattale.github.io/auto1/](https://github.com/firattale/auto1)
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
