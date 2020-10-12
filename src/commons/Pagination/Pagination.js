@@ -1,13 +1,14 @@
 import React from 'react';
 import cx from 'classnames';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectCars, selectCurrentPage, incrementPage, decrementPage, changePage, selectManufacturer, selectColor } from '../../app/carsSlice';
+import { selectCars, selectCurrentPage, incrementPage, decrementPage, changePage, selectManufacturer, selectColor, selectSorting } from '../../app/carsSlice';
 import { fetchCars } from '../../app/asyncActions';
 
 const Pagination = () => {
   const cars = useSelector(selectCars);
   const currentPage = useSelector(selectCurrentPage);
   const manufacturer = useSelector(selectManufacturer);
+  const sort = useSelector(selectSorting);
   const color = useSelector(selectColor);
   const { totalPageCount } = cars;
   const dispatch = useDispatch();
@@ -18,7 +19,8 @@ const Pagination = () => {
     const params = {
       manufacturer,
       page: currentPage + 1,
-      color
+      color,
+      sort
     };
     !isLastPage && dispatch(fetchCars(params));
   };
@@ -27,7 +29,8 @@ const Pagination = () => {
     const params = {
       manufacturer,
       page: currentPage - 1,
-      color
+      color,
+      sort
     };
     !isFirstPage && dispatch(fetchCars(params));
   };
@@ -36,7 +39,8 @@ const Pagination = () => {
     const params = {
       manufacturer,
       page: 1,
-      color
+      color,
+      sort
     };
     !isFirstPage && dispatch(fetchCars(params));
   };
@@ -46,7 +50,8 @@ const Pagination = () => {
     const params = {
       manufacturer,
       page: totalPageCount,
-      color
+      color,
+      sort
     };
     !isLastPage && dispatch(fetchCars(params));
   };

@@ -20,6 +20,7 @@ export const initialState = {
   carDetail: {},
   currentPage: 1,
   manufacturer: null,
+  sorting: null,
   color: null,
   error: null
 };
@@ -42,6 +43,9 @@ export const carsSlice = createSlice({
     },
     changeManufacturer: (state, action) => {
       state.manufacturer = action.payload;
+    },
+    changeSorting: (state, action) => {
+      state.sorting = action.payload;
     },
     clearCarDetail: (state, action) => {
       state.carDetail = {};
@@ -90,7 +94,7 @@ export const carsSlice = createSlice({
   }
 });
 
-export const { incrementPage, decrementPage, changePage, changeColor, changeManufacturer, clearCarDetail } = carsSlice.actions;
+export const { incrementPage, decrementPage, changePage, changeColor, changeManufacturer, clearCarDetail, changeSorting } = carsSlice.actions;
 
 export const selectError = state => state.cars.error;
 export const selectColors = state => state.cars.colors;
@@ -100,5 +104,6 @@ export const selectCurrentPage = state => state.cars.currentPage;
 export const selectManufacturer = state => state.cars.manufacturer;
 export const selectCarDetail = state => state.cars.carDetail;
 export const selectColor = state => state.cars.color;
+export const selectSorting = state => state.cars.sorting;
 
 export default carsSlice.reducer;
