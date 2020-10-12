@@ -25,7 +25,6 @@ const FilterForm = () => {
           sort
         }}
         onSubmit={async (values) => {
-          console.log('values', values);
           dispatch(changePage(1));
           dispatch(changeColor(values.color));
           dispatch(changeManufacturer(values.manufacturer));

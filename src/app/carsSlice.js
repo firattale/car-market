@@ -47,7 +47,7 @@ export const carsSlice = createSlice({
     changeSorting: (state, action) => {
       state.sorting = action.payload;
     },
-    clearCarDetail: (state, action) => {
+    clearCarDetail: (state) => {
       state.carDetail = {};
     }
   },
@@ -68,19 +68,14 @@ export const carsSlice = createSlice({
       state.error = 'Something went wrong! Please refresh the page.';
       state.manufacturers.isLoaded = false;
     },
-    [fetchCars.pending]: (state) => {
-      state.cars.loading = true;
-    },
     [fetchCars.fulfilled]: (state, action) => {
       state.cars.data = action.payload.cars;
       state.cars.totalCarsCount = action.payload.totalCarsCount;
       state.cars.totalPageCount = action.payload.totalPageCount;
-      state.cars.loading = false;
       state.cars.isLoaded = true;
     },
     [fetchCars.rejected]: (state) => {
       state.cars.data = [];
-      state.cars.loading = false;
       state.cars.isLoaded = false;
       state.error = 'Something went wrong! Please refresh the page.';
     },
