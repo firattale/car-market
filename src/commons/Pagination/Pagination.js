@@ -58,11 +58,11 @@ const Pagination = () => {
   };
   return (
     <div className="d-flex justify-content-center mt-3 mb-3">
-      <span className={cx({ 'pag-button': !isFirstPage, 'page-count': isFirstPage })} onClick={onFirstClickHandler}>First</span>
-      <span className={cx({ 'pag-button': !isFirstPage, 'page-count': isFirstPage })} onClick={onPreviousClickHandler}>Previous</span>
-      <span className="page-count">Page {currentPage} of {totalPageCount}</span>
-      <span className={cx({ 'pag-button': !isLastPage, 'page-count': isLastPage })} onClick={onNextClickHandler}>Next</span>
-      <span className={cx({ 'pag-button': !isLastPage, 'page-count': isLastPage })} onClick={onLastClickHandler}>Last</span>
+      <span className={cx({ 'enabled-pagination': !isFirstPage, 'disabled-pagination': isFirstPage })} onClick={onFirstClickHandler} data-testid="first-button">First</span>
+      <span className={cx({ 'enabled-pagination': !isFirstPage, 'disabled-pagination': isFirstPage })} onClick={onPreviousClickHandler} data-testid="previous-button">Previous</span>
+      <span className="disabled-pagination">Page {currentPage} of {totalPageCount}</span>
+      <span className={cx({ 'enabled-pagination': !isLastPage, 'disabled-pagination': isLastPage })} onClick={onNextClickHandler} data-testid="next-button" >Next</span>
+      <span className={cx({ 'enabled-pagination': !isLastPage, 'disabled-pagination': isLastPage })} onClick={onLastClickHandler} data-testid="last-button">Last</span>
     </div>
   );
 };
