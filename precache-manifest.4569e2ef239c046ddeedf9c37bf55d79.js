@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2cc080521d11e49996d04d1292a17bce",
+    "revision": "c358e57266c3a640e2653465419f6e47",
     "url": "/car-market/index.html"
   },
   {
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/car-market/static/css/7.1711f841.chunk.css"
   },
   {
-    "revision": "6147003ee96fe44b3eaf",
+    "revision": "2dde11ee7f6957b55579",
     "url": "/car-market/static/css/main.5013f705.chunk.css"
   },
   {
@@ -28,20 +28,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/car-market/static/js/0.fe3cbf11.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b26974af336c8ae8925d",
-    "url": "/car-market/static/js/3.811e219e.chunk.js"
+    "revision": "a93876fd343e2f9d4034",
+    "url": "/car-market/static/js/3.25c97d92.chunk.js"
   },
   {
     "revision": "3453b8997016469371284a28c0e873e2",
-    "url": "/car-market/static/js/3.811e219e.chunk.js.LICENSE.txt"
+    "url": "/car-market/static/js/3.25c97d92.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "23384bbf326f19c7073c",
-    "url": "/car-market/static/js/4.2ee40d00.chunk.js"
+    "revision": "5340e7bbafb0d78d6f09",
+    "url": "/car-market/static/js/4.f670e531.chunk.js"
   },
   {
     "revision": "bd49b04565accd5b6f2624c86f8385ba",
-    "url": "/car-market/static/js/4.2ee40d00.chunk.js.LICENSE.txt"
+    "url": "/car-market/static/js/4.f670e531.chunk.js.LICENSE.txt"
   },
   {
     "revision": "e72835232061756dbbd5",
@@ -56,12 +56,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/car-market/static/js/7.e05f62a9.chunk.js"
   },
   {
-    "revision": "6147003ee96fe44b3eaf",
-    "url": "/car-market/static/js/main.36f94989.chunk.js"
+    "revision": "2dde11ee7f6957b55579",
+    "url": "/car-market/static/js/main.723fedfa.chunk.js"
   },
   {
-    "revision": "f231c269860c9f06591d",
-    "url": "/car-market/static/js/runtime-main.51ab3471.js"
+    "revision": "b09282ccd650e9bb0bc2",
+    "url": "/car-market/static/js/runtime-main.8b5e22a0.js"
   },
   {
     "revision": "fb20abffd6ef7a76d0fe114e283e1bc3",
