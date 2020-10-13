@@ -14,7 +14,6 @@ export const initialState = {
     data: [],
     totalPageCount: 100,
     totalCarsCount: 1000,
-    loading: false,
     isLoaded: false
   },
   carDetail: {},
@@ -67,6 +66,9 @@ export const carsSlice = createSlice({
     [fetchManufacturers.rejected]: (state) => {
       state.error = 'Something went wrong! Please refresh the page.';
       state.manufacturers.isLoaded = false;
+    },
+    [fetchCars.pending]: (state) => {
+      state.cars.data = [];
     },
     [fetchCars.fulfilled]: (state, action) => {
       state.cars.data = action.payload.cars;
