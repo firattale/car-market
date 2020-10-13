@@ -17,7 +17,7 @@
   <p align="center">
     <br />
     <br />
-    <a href="https://firattale.github.io/car-market/">View Demo</a>
+    <a href="https://firattale.github.io/car-market/#/car-market/">View Demo</a>
     ·
     <a href="https://github.com/firattale/car-market/issues">Report Bug</a>
     ·
@@ -51,7 +51,7 @@
 * You can scroll down and see other pages by using pagination buttons.
 * Also you can filter cars by manufacturer and color.
 * You can check the details of car after you click the view details button.
-* Refresh is not working on details page, because of github pages internal functionality.
+* HashRouter has been used for letting Github refresh on details page.
 
 
 ### Built With
