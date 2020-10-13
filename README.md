@@ -51,6 +51,8 @@
 * You can scroll down and see other pages by using pagination buttons.
 * Also you can filter cars by manufacturer and color.
 * You can check the details of car after you click the view details button.
+* Refresh is not working on details page, because of github pages internal functionality.
+
 
 ### Built With
 * [React](https://reactjs.org/)
