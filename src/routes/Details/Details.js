@@ -54,7 +54,7 @@ const Details = () => {
           <Card className="d-flex align-items-center">
             <Card.Body>
               <Card.Text>If you like this car, click the button and save it in your collection of favourite items.</Card.Text>
-              <div className="d-flex justify-content-end"><Button type="submit" className="form-button mt-2" size="small" onClick={onSaveHandler}>{isFav ? 'UnSave' : 'Save'}</Button></div>
+              <div className="d-flex justify-content-end"><Button type="submit" className="form-button mt-2" data-testid="save-button" size="small" onClick={onSaveHandler}>{isFav ? 'UnSave' : 'Save'}</Button></div>
             </Card.Body>
           </Card>
         </CardGroup>

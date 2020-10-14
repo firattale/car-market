@@ -11,7 +11,7 @@ const CarCard = ({ car: { stockNumber, pictureUrl, modelName, fuelType, mileage:
         <Card.Body>
           <Card.Title><h1>{modelName}</h1></Card.Title>
           <Card.Text>Stock - # {stockNumber} - {number} KM - {fuelType} - {color}</Card.Text>
-          <Card.Text><Link to={`details/${stockNumber}`} className="details">View Details</Link></Card.Text>
+          <Card.Text><Link to={`details/${stockNumber}`} className="details" data-testid="view-details">View Details</Link></Card.Text>
         </Card.Body>
       </Card>
     </CardGroup>

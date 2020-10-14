@@ -86,10 +86,60 @@ describe('Home', () => {
     act(() => {
       userEvent.click(screen.getByTestId('form-button'));
     });
-    screen.debug();
     screen.getByText(/Stock/);
     screen.getByText(/# 11669/);
     screen.getByText(/139631 KM - Petrol - red/);
     screen.getByText(/Showing 1 of 82 Results/);
+  });
+  test('filter by brand', async () => {
+    const state = {
+      ...mockState,
+      cars: {
+        data: [{
+          color: 'green',
+          fuelType: 'Petrol',
+          manufacturerName: 'BMW',
+          mileage: { number: 161399, unit: 'km' },
+          modelName: '7er',
+          pictureUrl: 'https://auto1-js-task-api--mufasa71.repl.co/images/car.svg',
+          stockNumber: 10129
+        },
+        {
+          color: 'red',
+          fuelType: 'Petrol',
+          manufacturerName: 'BMW',
+          mileage: { number: 189932, unit: 'km' },
+          modelName: 'X2',
+          pictureUrl: 'https://auto1-js-task-api--mufasa71.repl.co/images/car.svg',
+          stockNumber: 10878
+        },
+        {
+          color: 'white',
+          fuelType: 'Petrol',
+          manufacturerName: 'BMW',
+          mileage: { number: 183733, unit: 'km' },
+          modelName: 'X5',
+          pictureUrl: 'https://auto1-js-task-api--mufasa71.repl.co/images/car.svg',
+          stockNumber: 11037
+        }
+        ],
+        totalPageCount: 10,
+        totalCarsCount: 93,
+        isLoaded: true
+      }
+    };
+    const [comp] = wrappedComponent(<Home/>, state);
+
+    render(comp);
+    act(() => {
+      userEvent.selectOptions(screen.getByTestId('select-color'), ['red']);
+    });
+    act(() => {
+      userEvent.click(screen.getByTestId('form-button'));
+    });
+    screen.getAllByText(/Stock/);
+    screen.getByText(/# 10129/);
+    screen.getByText(/161399 KM - Petrol - green/);
+    screen.getByText(/Showing 3 of 93 Results/);
   });
 });
