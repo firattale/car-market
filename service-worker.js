@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/car-market/precache-manifest.4569e2ef239c046ddeedf9c37bf55d79.js"
+  "/car-market/precache-manifest.a6e2710d76ce3ea2f4c0568d7f30e4a5.js"
 );
 
 self.addEventListener('message', (event) => {

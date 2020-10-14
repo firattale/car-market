@@ -1,14 +1,14 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c358e57266c3a640e2653465419f6e47",
+    "revision": "c0fa80d89535a1be27b7475d27c31e8c",
     "url": "/car-market/index.html"
   },
   {
-    "revision": "e72835232061756dbbd5",
+    "revision": "b73842051fc078fc8ea5",
     "url": "/car-market/static/css/5.db647ec7.chunk.css"
   },
   {
-    "revision": "9fb8b448a17deeb7cd77",
+    "revision": "6950abb38c5c0d0853d7",
     "url": "/car-market/static/css/6.f9615cb1.chunk.css"
   },
   {
@@ -44,12 +44,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/car-market/static/js/4.f670e531.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e72835232061756dbbd5",
-    "url": "/car-market/static/js/5.468bd410.chunk.js"
+    "revision": "b73842051fc078fc8ea5",
+    "url": "/car-market/static/js/5.b306395f.chunk.js"
   },
   {
-    "revision": "9fb8b448a17deeb7cd77",
-    "url": "/car-market/static/js/6.6a3b373b.chunk.js"
+    "revision": "6950abb38c5c0d0853d7",
+    "url": "/car-market/static/js/6.f315a627.chunk.js"
   },
   {
     "revision": "76fabd3450da315086ba",
@@ -60,8 +60,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/car-market/static/js/main.723fedfa.chunk.js"
   },
   {
-    "revision": "b09282ccd650e9bb0bc2",
-    "url": "/car-market/static/js/runtime-main.8b5e22a0.js"
+    "revision": "6582e242deac166e72cd",
+    "url": "/car-market/static/js/runtime-main.e8e352ad.js"
   },
   {
     "revision": "fb20abffd6ef7a76d0fe114e283e1bc3",
