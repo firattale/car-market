@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCarDetail } from '../../app/asyncActions';
-import {  clearCarDetail } from '../../app/carsSlice';
+import { clearCarDetail } from '../../app/carsSlice';
 import './details.scss';
 import Skeleton from 'react-loading-skeleton';
 import { Card, CardGroup } from 'react-bootstrap';
 import Button from '@material-ui/core/Button';
 import { capitalize } from '../../helpers/helpers';
-import {selectCarDetail} from "../../app/selectors"
+import { selectCarDetail } from "../../app/selectors"
 
 const Details = () => {
   useEffect(() => {
@@ -42,7 +42,7 @@ const Details = () => {
         <CardGroup>
           <Card className="d-flex align-items-center">
             <Card.Body>
-              <Card.Title><h1>{ details.modelName || <Skeleton className="m-0" width={100} />}</h1></Card.Title>
+              <Card.Title><h1>{details.modelName || <Skeleton className="m-0" width={100} />}</h1></Card.Title>
               <Card.Text>Stock #{" "}
                 {details.stockNumber ? `${details.stockNumber} - ${details?.mileage?.number} KM - ${details.fuelType} - ${capitalize(details.color)}` : <Skeleton className="m-0" width={150} />}
               </Card.Text>
