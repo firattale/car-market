@@ -60,7 +60,24 @@ describe('Home', () => {
     expect(options.length).toBe(3);
   });
   test('filter by colors', async () => {
-    const [comp] = wrappedComponent(<Home/>, mockState);
+    const state = {
+      ...mockState,
+      cars: {
+        data: [{
+          color: 'red',
+          fuelType: 'Petrol',
+          manufacturerName: 'Skoda',
+          mileage: { number: 139631, unit: 'km' },
+          modelName: 'Forman',
+          pictureUrl: 'https://auto1-js-task-api--mufasa71.repl.co/images/car.svg',
+          stockNumber: 11669
+        }],
+        totalPageCount: 9,
+        totalCarsCount: 82,
+        isLoaded: true
+      }
+    };
+    const [comp] = wrappedComponent(<Home/>, state);
 
     render(comp);
     act(() => {
@@ -70,7 +87,9 @@ describe('Home', () => {
       userEvent.click(screen.getByTestId('form-button'));
     });
     screen.debug();
-    // const options = screen.getAllByTestId('select-color-option');
-    // expect(options.length).toBe(3);
+    screen.getByText(/Stock/);
+    screen.getByText(/# 11669/);
+    screen.getByText(/139631 KM - Petrol - red/);
+    screen.getByText(/Showing 1 of 82 Results/);
   });
 });
