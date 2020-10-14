@@ -35,7 +35,7 @@ const Details = () => {
   };
   return (
     <div className="details-page-content">
-      <div className="w-100 text-center">
+      <div className="w-100 text-center" style={{height: "260px"}}>
         {details.pictureUrl ? <img src={details.pictureUrl} alt="Car Logo"></img> : <Skeleton width={300} height={260} className="m-0" />}
       </div>
       <div className="content-container">
