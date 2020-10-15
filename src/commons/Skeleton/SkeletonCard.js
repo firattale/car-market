@@ -8,7 +8,7 @@ const SkeletonCard = () => {
       <Card style={{ paddingBottom: '16px', paddingTop: '16px' }}>
         <Skeleton width={104} height={90}/>
         <Card.Body className="d-flex flex-column ml-3">
-          <Skeleton width={95} height={28} />
+          <Skeleton width={150} height={28} />
           <Skeleton width={170} height={28} />
           <Skeleton width={100} height={28} />
         </Card.Body>
